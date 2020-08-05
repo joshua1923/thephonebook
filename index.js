@@ -97,7 +97,7 @@ app.post('/api/persons', (req, res) => {
 })
 
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname+'/client/build/index.html'))
+    res.sendFile(path.join(__dirname+'/Client/build/index.html'))
 })
 
 const PORT = process.env.PORT || 5000
