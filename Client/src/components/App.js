@@ -41,8 +41,8 @@ const App = () => {
                 number: newNumber
             }
 
-            personService.create(personObject).then(returnedPerson => {
-                setPersons(persons.concat(returnedPerson))
+            personService.create(personObject).then(createdPerson => {
+                setPersons(persons.concat(createdPerson))
                 setNewName('')
                 setMessage(`Added ${personObject.name}`)
                 setStyle(Styles.StyleSuccess)
@@ -50,6 +50,14 @@ const App = () => {
                     setMessage(null)
                     setStyle(null)
                   }, 5000)
+            }).catch(error => {
+                setMessage(error.response.data)
+                setTimeout(() => {
+                    setMessage(null)
+                    setStyle(Styles.StyleError)
+                    setStyle(null)
+                })
+                console.log(error.response.data)
             })
         }
     }

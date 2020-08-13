@@ -1,10 +1,10 @@
 require('dotenv').config();
-const express = require('express')
-const cors = require('cors')
-const path = require('path')
-const bodyParser = require('body-parser')
-const morgan = require('morgan')
-const app = express()
+const express = require('express');
+const cors = require('cors');
+const path = require('path');
+const bodyParser = require('body-parser');
+const morgan = require('morgan');
+const app = express();
 const Person = require('./models/person');
 const { response } = require('express');
 
